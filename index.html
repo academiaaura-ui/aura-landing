@@ -1,194 +1,551 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <!-- Aqui ira el primer codigo de Google Tag Manager -->
+  <!-- Aquí irá luego el código de Google Tag Manager -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>AURA | Clases virtuales de Fisica y Matematica</title>
+  <title>AURA | Clases virtuales de Física y Matemática</title>
 
-  <meta name="description" content="Clases virtuales de Fisica y Matematica para escolares, preuniversitarios y universitarios. Sesiones personalizadas de 2 horas.">
+  <meta name="description" content="Clases virtuales de Física y Matemática para escolares, preuniversitarios y universitarios. Sesiones personalizadas de 2 horas por videollamada.">
 
   <style>
+    :root {
+      --azul: #14213d;
+      --morado: #5a189a;
+      --morado-claro: #7b2cbf;
+      --dorado: #d4af37;
+      --blanco: #ffffff;
+      --gris-fondo: #f5f6fb;
+      --gris-texto: #4a4a5a;
+      --verde-whatsapp: #25D366;
+      --sombra: 0 12px 30px rgba(20, 33, 61, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f7fb;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--gris-fondo);
       color: #1f1f2e;
     }
 
-    .container {
-      max-width: 950px;
+    .topbar {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid #e8e8f2;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar-content {
+      max-width: 1100px;
       margin: auto;
-      padding: 30px 20px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--azul);
+    }
+
+    .logo-img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .brand-text strong {
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    .brand-text span {
+      font-size: 13px;
+      color: var(--gris-texto);
+    }
+
+    .topbar-button {
+      background: var(--verde-whatsapp);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 28px 20px 90px;
     }
 
     .hero {
-      background: linear-gradient(135deg, #14213d, #5a189a);
+      background: linear-gradient(135deg, var(--azul), var(--morado));
       color: white;
-      padding: 55px 25px;
-      border-radius: 22px;
-      text-align: center;
+      border-radius: 28px;
+      padding: 55px 35px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+      box-shadow: var(--sombra);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      width: 260px;
+      height: 260px;
+      background: rgba(212, 175, 55, 0.16);
+      border-radius: 50%;
+      position: absolute;
+      right: -70px;
+      top: -70px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: 36px;
-      margin-bottom: 15px;
+      font-size: 44px;
+      line-height: 1.08;
+      margin: 0 0 18px;
     }
 
     .hero p {
-      font-size: 19px;
-      line-height: 1.5;
+      font-size: 20px;
+      line-height: 1.55;
+      margin: 0;
+      color: #f2f2ff;
     }
 
-    .btn-whatsapp {
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .btn-primary {
       display: inline-block;
-      margin-top: 25px;
-      padding: 16px 28px;
-      background: #25D366;
+      background: var(--verde-whatsapp);
       color: white;
+      padding: 16px 24px;
+      border-radius: 14px;
       text-decoration: none;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
-      border-radius: 12px;
+      box-shadow: 0 10px 22px rgba(37, 211, 102, 0.25);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 15px 20px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 24px;
+      padding: 25px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-card h2 {
+      margin-top: 0;
+      font-size: 24px;
+      color: var(--dorado);
+    }
+
+    .hero-card ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+      line-height: 1.8;
     }
 
     .section {
       background: white;
-      margin-top: 25px;
-      padding: 25px;
-      border-radius: 18px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      margin-top: 26px;
+      padding: 30px;
+      border-radius: 24px;
+      box-shadow: var(--sombra);
     }
 
-    .section h2 {
-      color: #14213d;
+    .section-title {
       margin-top: 0;
+      color: var(--azul);
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--gris-texto);
+      font-size: 17px;
+      margin-top: 0;
+      line-height: 1.55;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 22px;
     }
 
     .card {
-      background: #f1f1fa;
+      background: #f7f4ff;
+      border: 1px solid #ece4ff;
+      padding: 22px;
+      border-radius: 18px;
+    }
+
+    .card h3 {
+      color: var(--morado);
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--gris-texto);
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .benefit {
+      background: #f8f8fc;
+      border-radius: 16px;
       padding: 18px;
-      border-radius: 14px;
+      border-left: 5px solid var(--dorado);
+      font-weight: bold;
+      color: var(--azul);
+    }
+
+    .cta-box {
+      text-align: center;
+      background: linear-gradient(135deg, #ffffff, #f4efff);
+      border: 1px solid #ece4ff;
+    }
+
+    .cta-box h2 {
+      color: var(--azul);
+      font-size: 30px;
+      margin-top: 0;
+    }
+
+    .cta-box p {
+      color: var(--gris-texto);
+      font-size: 18px;
+      line-height: 1.55;
     }
 
     .footer {
       text-align: center;
       margin-top: 30px;
+      color: #6b6b78;
       font-size: 14px;
-      color: #666;
     }
 
-    @media (max-width: 600px) {
+    .floating-whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 200;
+      background: var(--verde-whatsapp);
+      color: white;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .floating-whatsapp span {
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 42px 24px;
+      }
+
       .hero h1 {
-        font-size: 28px;
+        font-size: 34px;
       }
 
       .hero p {
-        font-size: 17px;
+        font-size: 18px;
       }
 
-      .btn-whatsapp {
-        font-size: 18px;
-        padding: 14px 20px;
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefits {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar-content {
+        align-items: flex-start;
+      }
+
+      .brand-text strong {
+        font-size: 19px;
+      }
+
+      .brand-text span {
+        font-size: 12px;
+      }
+
+      .topbar-button {
+        display: none;
+      }
+
+      .container {
+        padding: 20px 14px 90px;
+      }
+
+      .hero {
+        border-radius: 20px;
+        padding: 35px 20px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .section {
+        padding: 24px 18px;
+        border-radius: 20px;
+      }
+
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
+
 </head>
 
 <body>
-  <!-- Aqui ira el segundo codigo de Google Tag Manager -->
 
-  <div class="container">
+  <header class="topbar">
+    <div class="topbar-content">
+      <a href="#" class="brand">
+        <img src="assets/logo.png" alt="Logo de AURA" class="logo-img" onerror="this.style.display='none'">
+        <div class="brand-text">
+          <strong>AURA</strong>
+          <span>Aula Universitaria de Refuerzo Académico</span>
+        </div>
+      </a>
 
-    <section class="hero">
-      <h1>Clases virtuales de Fisica y Matematica</h1>
+```
+  <a
+    id="btn-whatsapp-header"
+    class="topbar-button"
+    href="https://wa.me/51927820626?text=Hola%20AURA,%20vengo%20de%20la%20landing%20y%20quiero%20informes%20sobre%20clases"
+    target="_blank">
+    Escribir por WhatsApp
+  </a>
+</div>
+```
 
-      <p>
-        Refuerzo academico personalizado para escolares, preuniversitarios
-        y universitarios. Clases de 2 horas por videollamada, con explicacion
-        paso a paso.
-      </p>
+  </header>
 
+  <main class="container">
+
+```
+<section class="hero">
+  <div class="hero-content">
+    <span class="badge">Clases virtuales personalizadas</span>
+
+    <h1>Refuerza Física y Matemática con clases claras y paso a paso</h1>
+
+    <p>
+      En AURA ayudamos a escolares, preuniversitarios y universitarios a entender sus cursos
+      mediante sesiones virtuales de 2 horas, con explicación guiada y resolución de ejercicios.
+    </p>
+
+    <div class="hero-actions">
       <a
         id="btn-whatsapp-principal"
-        class="btn-whatsapp"
+        class="btn-primary"
         href="https://wa.me/51927820626?text=Hola%20AURA,%20vengo%20de%20Google%20Ads%20y%20quiero%20informes%20sobre%20clases"
         target="_blank">
         Pedir informes por WhatsApp
       </a>
-    </section>
 
-    <section class="section">
-      <h2>Para quienes son las clases</h2>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Escolares</h3>
-          <p>
-            Reforzamiento en Fisica y Matematica para secundaria.
-            Ideal para practicas, evaluaciones y recuperacion de temas.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Preuniversitarios</h3>
-          <p>
-            Entrenamiento en problemas operativos, teoria necesaria
-            y resolucion paso a paso.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Universitarios</h3>
-          <p>
-            Apoyo en Fisica, Matematica, Calculo, Algebra y cursos afines.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Como trabajamos</h2>
-
-      <p>
-        Primero identificamos el curso y el tema que necesitas reforzar.
-        Luego programamos una clase virtual de 2 horas, donde se explica
-        la teoria necesaria y se resuelven ejercicios de forma guiada.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>Que incluye la clase</h2>
-
-      <ul>
-        <li>Modalidad 100% virtual.</li>
-        <li>Sesiones personalizadas de 2 horas.</li>
-        <li>Explicacion clara y paso a paso.</li>
-        <li>Resolucion guiada de ejercicios.</li>
-        <li>Atencion para colegio, preuniversitario y universidad.</li>
-      </ul>
-
-      <a
-        id="btn-whatsapp-secundario"
-        class="btn-whatsapp"
-        href="https://wa.me/51927820626?text=Hola%20AURA,%20vengo%20de%20la%20landing%20y%20quiero%20consultar%20disponibilidad"
-        target="_blank">
-        Consultar disponibilidad
+      <a href="#cursos" class="btn-secondary">
+        Ver cursos
       </a>
-    </section>
+    </div>
+  </div>
 
-    <div class="footer">
-      AURA - Aula Universitaria de Refuerzo Academico
+  <div class="hero-card">
+    <h2>¿Qué ofrecemos?</h2>
+    <ul>
+      <li>Clases 100% virtuales.</li>
+      <li>Sesiones de 2 horas.</li>
+      <li>Explicación desde lo básico.</li>
+      <li>Resolución guiada de ejercicios.</li>
+      <li>Atención para colegio y universidad.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">¿Por qué elegir AURA?</h2>
+  <p class="section-subtitle">
+    No solo resolvemos ejercicios: buscamos que el estudiante entienda el procedimiento,
+    identifique sus errores y gane seguridad para sus prácticas, exámenes o clases.
+  </p>
+
+  <div class="benefits">
+    <div class="benefit">Explicación paso a paso</div>
+    <div class="benefit">Clases por videollamada</div>
+    <div class="benefit">Nivel escolar y universitario</div>
+    <div class="benefit">Atención por WhatsApp</div>
+  </div>
+</section>
+
+<section class="section" id="cursos">
+  <h2 class="section-title">¿Para quiénes son las clases?</h2>
+  <p class="section-subtitle">
+    Adaptamos la clase según el nivel del estudiante y el tema que necesita reforzar.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Escolares</h3>
+      <p>
+        Refuerzo en Física y Matemática para secundaria. Ideal para prácticas,
+        evaluaciones, tareas y recuperación de temas.
+      </p>
     </div>
 
+    <div class="card">
+      <h3>Preuniversitarios</h3>
+      <p>
+        Preparación en problemas operativos, teoría necesaria y resolución paso a paso
+        para mejorar el rendimiento.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Universitarios</h3>
+      <p>
+        Apoyo en Física, Matemática, Cálculo, Álgebra y cursos afines,
+        según el sílabo o material del estudiante.
+      </p>
+    </div>
   </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">¿Cómo trabajamos?</h2>
+  <p class="section-subtitle">
+    Primero nos escribes por WhatsApp y nos indicas el curso, tema y nivel. Luego coordinamos
+    disponibilidad, modalidad y horario. La clase se realiza por videollamada y se trabaja con
+    explicación teórica breve más ejercicios guiados.
+  </p>
+</section>
+
+<section class="section cta-box">
+  <h2>¿Necesitas reforzar un curso?</h2>
+  <p>
+    Escríbenos por WhatsApp y cuéntanos qué tema necesitas trabajar.
+    Te orientamos para programar una clase virtual.
+  </p>
+
+  <a
+    id="btn-whatsapp-secundario"
+    class="btn-primary"
+    href="https://wa.me/51927820626?text=Hola%20AURA,%20vengo%20de%20la%20landing%20y%20quiero%20consultar%20disponibilidad"
+    target="_blank">
+    Consultar disponibilidad
+  </a>
+</section>
+
+<div class="footer">
+  AURA - Aula Universitaria de Refuerzo Académico | Clases virtuales de Física y Matemática
+</div>
+```
+
+  </main>
+
+<a
+ id="btn-whatsapp-flotante"
+ class="floating-whatsapp"
+ href="https://wa.me/51927820626?text=Hola%20AURA,%20quiero%20informes%20sobre%20clases%20virtuales"
+ target="_blank"
+ aria-label="WhatsApp AURA"> <span>☎</span> </a>
+
 </body>
 </html>
+
