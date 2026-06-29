@@ -2,74 +2,91 @@
 
 <html lang="es">
 <head>
-  <!-- Aquí irá luego el código de Google Tag Manager -->
+  <!-- Aquí irá luego Google Tag Manager -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>AURA | Clases virtuales de Física y Matemática</title>
 
-  <meta name="description" content="Clases virtuales de Física y Matemática para escolares, preuniversitarios y universitarios. Sesiones personalizadas de 2 horas por videollamada.">
+  <meta name="description" content="Clases virtuales personalizadas de Física y Matemática para escolares, preuniversitarios y universitarios. Sesiones de 2 horas por videollamada.">
+
+  <meta property="og:title" content="AURA | Clases virtuales de Física y Matemática">
+  <meta property="og:description" content="Refuerzo académico personalizado para escolares, preuniversitarios y universitarios.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:type" content="website">
 
   <style>
     :root {
-      --azul: #14213d;
-      --morado: #5a189a;
-      --morado-claro: #7b2cbf;
-      --dorado: #d4af37;
+      --fondo: #020817;
+      --fondo-2: #07142b;
+      --azul-aura: #3b9dff;
+      --azul-suave: #82c6ff;
+      --morado-aura: #7b4dff;
+      --morado-suave: #a78bfa;
       --blanco: #ffffff;
-      --gris-fondo: #f5f6fb;
-      --gris-texto: #4a4a5a;
+      --gris: #cbd5e1;
+      --gris-2: #94a3b8;
       --verde-whatsapp: #25D366;
-      --sombra: 0 12px 30px rgba(20, 33, 61, 0.12);
+      --borde: rgba(255, 255, 255, 0.12);
+      --sombra: 0 24px 60px rgba(0, 0, 0, 0.35);
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--gris-fondo);
-      color: #1f1f2e;
+      background:
+        radial-gradient(circle at top left, rgba(59,157,255,0.18), transparent 35%),
+        radial-gradient(circle at top right, rgba(123,77,255,0.18), transparent 35%),
+        linear-gradient(180deg, #020817 0%, #07142b 55%, #020817 100%);
+      color: var(--blanco);
+    }
+
+    a {
+      color: inherit;
     }
 
     .topbar {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      border-bottom: 1px solid #e8e8f2;
       position: sticky;
       top: 0;
       z-index: 100;
-      backdrop-filter: blur(10px);
+      background: rgba(2, 8, 23, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--borde);
     }
 
     .topbar-content {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: auto;
       padding: 14px 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 15px;
+      align-items: center;
+      gap: 18px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 13px;
       text-decoration: none;
-      color: var(--azul);
     }
 
-    .logo-img {
-      width: 52px;
-      height: 52px;
+    .brand img {
+      width: 56px;
+      height: 56px;
       object-fit: contain;
-      border-radius: 12px;
-      background: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-radius: 14px;
+      background: #020817;
+      border: 1px solid var(--borde);
     }
 
     .brand-text {
@@ -79,16 +96,32 @@
     }
 
     .brand-text strong {
-      font-size: 22px;
-      letter-spacing: 1px;
+      font-size: 23px;
+      letter-spacing: 4px;
     }
 
     .brand-text span {
       font-size: 13px;
-      color: var(--gris-texto);
+      color: var(--gris);
     }
 
-    .topbar-button {
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-link {
+      color: var(--gris);
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .nav-link:hover {
+      color: var(--azul-suave);
+    }
+
+    .btn-whatsapp-small {
       background: var(--verde-whatsapp);
       color: white;
       padding: 12px 18px;
@@ -97,37 +130,22 @@
       font-weight: bold;
       font-size: 15px;
       white-space: nowrap;
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.23);
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: auto;
-      padding: 28px 20px 90px;
+      padding: 34px 20px 100px;
     }
 
     .hero {
-      background: linear-gradient(135deg, var(--azul), var(--morado));
-      color: white;
-      border-radius: 28px;
-      padding: 55px 35px;
+      min-height: 620px;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 30px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
       align-items: center;
-      box-shadow: var(--sombra);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      width: 260px;
-      height: 260px;
-      background: rgba(212, 175, 55, 0.16);
-      border-radius: 50%;
-      position: absolute;
-      right: -70px;
-      top: -70px;
+      padding: 42px 0;
     }
 
     .hero-content {
@@ -136,166 +154,368 @@
     }
 
     .badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.25);
-      color: white;
-      padding: 8px 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(59,157,255,0.10);
+      border: 1px solid rgba(59,157,255,0.35);
+      color: var(--azul-suave);
+      padding: 9px 14px;
       border-radius: 999px;
       font-size: 14px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .hero h1 {
-      font-size: 44px;
-      line-height: 1.08;
-      margin: 0 0 18px;
+      font-size: 58px;
+      line-height: 1.02;
+      margin: 0 0 20px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--azul-aura), var(--morado-suave));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero p {
+      color: var(--gris);
       font-size: 20px;
-      line-height: 1.55;
+      line-height: 1.65;
       margin: 0;
-      color: #f2f2ff;
+      max-width: 620px;
     }
 
     .hero-actions {
-      margin-top: 28px;
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      align-items: center;
+      margin-top: 30px;
     }
 
     .btn-primary {
-      display: inline-block;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
       background: var(--verde-whatsapp);
       color: white;
       padding: 16px 24px;
-      border-radius: 14px;
+      border-radius: 15px;
       text-decoration: none;
       font-size: 18px;
       font-weight: bold;
-      box-shadow: 0 10px 22px rgba(37, 211, 102, 0.25);
+      box-shadow: 0 16px 32px rgba(37, 211, 102, 0.24);
     }
 
     .btn-secondary {
-      display: inline-block;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
       color: white;
-      border: 1px solid rgba(255,255,255,0.35);
-      padding: 15px 20px;
-      border-radius: 14px;
+      padding: 15px 22px;
+      border-radius: 15px;
       text-decoration: none;
       font-weight: bold;
+      border: 1px solid rgba(255,255,255,0.20);
+      background: rgba(255,255,255,0.06);
     }
 
-    .hero-card {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.22);
-      border-radius: 24px;
-      padding: 25px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-card h2 {
-      margin-top: 0;
-      font-size: 24px;
-      color: var(--dorado);
-    }
-
-    .hero-card ul {
-      padding-left: 20px;
-      margin-bottom: 0;
-      line-height: 1.8;
-    }
-
-    .section {
-      background: white;
-      margin-top: 26px;
-      padding: 30px;
-      border-radius: 24px;
+    .hero-media {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--borde);
+      border-radius: 30px;
+      padding: 22px;
       box-shadow: var(--sombra);
+      position: relative;
+      overflow: hidden;
     }
 
-    .section-title {
-      margin-top: 0;
-      color: var(--azul);
-      font-size: 30px;
-      margin-bottom: 12px;
+    .hero-media::before {
+      content: "";
+      position: absolute;
+      inset: -80px;
+      background:
+        radial-gradient(circle at top, rgba(59,157,255,0.25), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(123,77,255,0.25), transparent 35%);
+      z-index: 0;
     }
 
-    .section-subtitle {
-      color: var(--gris-texto);
-      font-size: 17px;
-      margin-top: 0;
-      line-height: 1.55;
+    .logo-principal {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      display: block;
+      border-radius: 24px;
     }
 
-    .grid {
+    .stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 14px;
       margin-top: 22px;
     }
 
-    .card {
-      background: #f7f4ff;
-      border: 1px solid #ece4ff;
-      padding: 22px;
+    .stat {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid var(--borde);
       border-radius: 18px;
+      padding: 18px;
+      text-align: center;
     }
 
-    .card h3 {
-      color: var(--morado);
-      margin-top: 0;
-      margin-bottom: 10px;
+    .stat strong {
+      display: block;
+      color: var(--azul-suave);
+      font-size: 24px;
+      margin-bottom: 4px;
     }
 
-    .card p {
-      color: var(--gris-texto);
-      line-height: 1.55;
-      margin-bottom: 0;
+    .stat span {
+      color: var(--gris);
+      font-size: 13px;
+    }
+
+    .section {
+      background: rgba(255,255,255,0.055);
+      border: 1px solid var(--borde);
+      border-radius: 30px;
+      padding: 36px;
+      margin-top: 28px;
+      box-shadow: var(--sombra);
+    }
+
+    .section-light {
+      background: linear-gradient(135deg, rgba(59,157,255,0.10), rgba(123,77,255,0.10));
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 34px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-title span {
+      color: var(--azul-suave);
+    }
+
+    .section-subtitle {
+      margin: 0;
+      color: var(--gris);
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 860px;
     }
 
     .benefits {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 22px;
+      gap: 16px;
+      margin-top: 26px;
     }
 
     .benefit {
-      background: #f8f8fc;
-      border-radius: 16px;
-      padding: 18px;
-      border-left: 5px solid var(--dorado);
-      font-weight: bold;
-      color: var(--azul);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      padding: 22px;
     }
 
-    .cta-box {
-      text-align: center;
-      background: linear-gradient(135deg, #ffffff, #f4efff);
-      border: 1px solid #ece4ff;
-    }
-
-    .cta-box h2 {
-      color: var(--azul);
-      font-size: 30px;
-      margin-top: 0;
-    }
-
-    .cta-box p {
-      color: var(--gris-texto);
+    .benefit strong {
+      display: block;
       font-size: 18px;
+      margin-bottom: 8px;
+      color: white;
+    }
+
+    .benefit p {
+      margin: 0;
+      color: var(--gris-2);
+      line-height: 1.5;
+      font-size: 15px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .image-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--borde);
+      border-radius: 26px;
+      overflow: hidden;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 310px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-card-content {
+      padding: 22px;
+    }
+
+    .image-card-content h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      color: white;
+    }
+
+    .image-card-content p {
+      margin: 0;
+      color: var(--gris);
       line-height: 1.55;
     }
 
-    .footer {
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .course-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--borde);
+      border-radius: 22px;
+      padding: 26px;
+      transition: 0.25s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(59,157,255,0.45);
+    }
+
+    .course-card h3 {
+      color: var(--azul-suave);
+      margin: 0 0 10px;
+      font-size: 23px;
+    }
+
+    .course-card p {
+      color: var(--gris);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+      counter-reset: pasos;
+    }
+
+    .process-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--borde);
+      border-radius: 22px;
+      padding: 24px;
+      position: relative;
+    }
+
+    .process-card::before {
+      counter-increment: pasos;
+      content: counter(pasos);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--azul-aura), var(--morado-aura));
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .process-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .process-card p {
+      margin: 0;
+      color: var(--gris);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+
+    .video-wrapper {
+      margin-top: 28px;
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      background: #000;
+      box-shadow: var(--sombra);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .faq {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    details {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--borde);
+      border-radius: 18px;
+      padding: 18px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: white;
+    }
+
+    details p {
+      color: var(--gris);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .cta-final {
       text-align: center;
-      margin-top: 30px;
-      color: #6b6b78;
+      background:
+        radial-gradient(circle at top left, rgba(59,157,255,0.18), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(123,77,255,0.18), transparent 35%),
+        rgba(255,255,255,0.06);
+    }
+
+    .cta-final h2 {
+      margin: 0 0 14px;
+      font-size: 38px;
+    }
+
+    .cta-final p {
+      color: var(--gris);
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 720px;
+      margin: 0 auto 26px;
+    }
+
+    .footer {
+      margin-top: 34px;
+      padding: 24px 0;
+      text-align: center;
+      color: var(--gris-2);
       font-size: 14px;
     }
 
@@ -303,90 +523,91 @@
       position: fixed;
       right: 22px;
       bottom: 22px;
-      z-index: 200;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
       background: var(--verde-whatsapp);
       color: white;
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       text-decoration: none;
-      font-size: 30px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      font-size: 31px;
+      z-index: 300;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.35);
     }
 
-    .floating-whatsapp span {
-      transform: translateY(-1px);
-    }
-
-    @media (max-width: 850px) {
+    @media (max-width: 980px) {
       .hero {
         grid-template-columns: 1fr;
-        padding: 42px 24px;
+        min-height: auto;
       }
 
       .hero h1 {
-        font-size: 34px;
+        font-size: 46px;
+      }
+
+      .benefits,
+      .process {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .courses {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-link {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 38px;
       }
 
       .hero p {
         font-size: 18px;
       }
 
-      .grid {
+      .section {
+        padding: 26px 20px;
+        border-radius: 24px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .image-grid {
         grid-template-columns: 1fr;
       }
 
-      .benefits {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .topbar-content {
-        align-items: flex-start;
-      }
-
-      .brand-text strong {
-        font-size: 19px;
-      }
-
-      .brand-text span {
-        font-size: 12px;
-      }
-
-      .topbar-button {
-        display: none;
-      }
-
-      .container {
-        padding: 20px 14px 90px;
-      }
-
-      .hero {
-        border-radius: 20px;
-        padding: 35px 20px;
-      }
-
-      .hero h1 {
-        font-size: 30px;
-      }
-
-      .section {
-        padding: 24px 18px;
-        border-radius: 20px;
-      }
-
-      .benefits {
+      .benefits,
+      .process,
+      .stats {
         grid-template-columns: 1fr;
       }
 
       .btn-primary,
       .btn-secondary {
         width: 100%;
-        text-align: center;
+      }
+
+      .brand-text strong {
+        font-size: 20px;
+      }
+
+      .brand-text span {
+        font-size: 12px;
+      }
+
+      .btn-whatsapp-small {
+        display: none;
+      }
+
+      .image-card img {
+        height: 240px;
       }
     }
   </style>
@@ -398,7 +619,7 @@
   <header class="topbar">
     <div class="topbar-content">
       <a href="#" class="brand">
-        <img src="assets/logo.png" alt="Logo de AURA" class="logo-img" onerror="this.style.display='none'">
+        <img src="assets/logo.png" alt="Logo de AURA" onerror="this.style.display='none'">
         <div class="brand-text">
           <strong>AURA</strong>
           <span>Aula Universitaria de Refuerzo Académico</span>
@@ -406,13 +627,18 @@
       </a>
 
 ```
-  <a
-    id="btn-whatsapp-header"
-    class="topbar-button"
-    href="https://wa.me/51927820626?text=Hola%20AURA,%20vengo%20de%20la%20landing%20y%20quiero%20informes%20sobre%20clases"
-    target="_blank">
-    Escribir por WhatsApp
-  </a>
+  <nav class="nav-actions">
+    <a class="nav-link" href="#beneficios">Beneficios</a>
+    <a class="nav-link" href="#cursos">Cursos</a>
+    <a class="nav-link" href="#video">Clase demo</a>
+    <a
+      id="btn-whatsapp-header"
+      class="btn-whatsapp-small"
+      href="https://wa.me/51927820626?text=Hola%20AURA,%20vengo%20de%20la%20landing%20y%20quiero%20informes%20sobre%20clases"
+      target="_blank">
+      WhatsApp
+    </a>
+  </nav>
 </div>
 ```
 
@@ -423,13 +649,13 @@
 ```
 <section class="hero">
   <div class="hero-content">
-    <span class="badge">Clases virtuales personalizadas</span>
+    <span class="badge">Clases virtuales personalizadas de 2 horas</span>
 
-    <h1>Refuerza Física y Matemática con clases claras y paso a paso</h1>
+    <h1>Entendemos. Aprendemos. <span>Avanzamos.</span></h1>
 
     <p>
-      En AURA ayudamos a escolares, preuniversitarios y universitarios a entender sus cursos
-      mediante sesiones virtuales de 2 horas, con explicación guiada y resolución de ejercicios.
+      En AURA ayudamos a estudiantes escolares, preuniversitarios y universitarios
+      a reforzar Física y Matemática con clases claras, ordenadas y explicadas paso a paso.
     </p>
 
     <div class="hero-actions">
@@ -441,100 +667,232 @@
         Pedir informes por WhatsApp
       </a>
 
-      <a href="#cursos" class="btn-secondary">
-        Ver cursos
+      <a class="btn-secondary" href="#video">
+        Ver clase demostrativa
       </a>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <strong>100%</strong>
+        <span>Modalidad virtual</span>
+      </div>
+
+      <div class="stat">
+        <strong>2 h</strong>
+        <span>Por sesión</span>
+      </div>
+
+      <div class="stat">
+        <strong>3</strong>
+        <span>Niveles académicos</span>
+      </div>
     </div>
   </div>
 
-  <div class="hero-card">
-    <h2>¿Qué ofrecemos?</h2>
-    <ul>
-      <li>Clases 100% virtuales.</li>
-      <li>Sesiones de 2 horas.</li>
-      <li>Explicación desde lo básico.</li>
-      <li>Resolución guiada de ejercicios.</li>
-      <li>Atención para colegio y universidad.</li>
-    </ul>
+  <div class="hero-media">
+    <img class="logo-principal" src="assets/logo.png" alt="Logo principal de AURA" onerror="this.style.display='none'">
+  </div>
+</section>
+
+<section class="section section-light" id="beneficios">
+  <h2 class="section-title">Una clase no debe ser solo resolver ejercicios</h2>
+  <p class="section-subtitle">
+    Nuestra idea es que el estudiante entienda qué está haciendo, por qué usa una fórmula
+    y cómo reconocer el método correcto para enfrentar problemas similares.
+  </p>
+
+  <div class="benefits">
+    <div class="benefit">
+      <strong>Paso a paso</strong>
+      <p>Explicamos el procedimiento sin saltar ideas importantes.</p>
+    </div>
+
+    <div class="benefit">
+      <strong>Clase personalizada</strong>
+      <p>Trabajamos según el curso, tema y nivel del estudiante.</p>
+    </div>
+
+    <div class="benefit">
+      <strong>Teoría + práctica</strong>
+      <p>Se revisa lo necesario y luego se resuelven ejercicios guiados.</p>
+    </div>
+
+    <div class="benefit">
+      <strong>Atención directa</strong>
+      <p>La coordinación se realiza por WhatsApp de forma rápida.</p>
+    </div>
   </div>
 </section>
 
 <section class="section">
-  <h2 class="section-title">¿Por qué elegir AURA?</h2>
+  <h2 class="section-title">Así se vive una clase virtual en <span>AURA</span></h2>
   <p class="section-subtitle">
-    No solo resolvemos ejercicios: buscamos que el estudiante entienda el procedimiento,
-    identifique sus errores y gane seguridad para sus prácticas, exámenes o clases.
+    Puedes usar tus apuntes, prácticas, guías, sílabos o ejercicios. La clase se adapta
+    al material que necesitas reforzar.
   </p>
 
-  <div class="benefits">
-    <div class="benefit">Explicación paso a paso</div>
-    <div class="benefit">Clases por videollamada</div>
-    <div class="benefit">Nivel escolar y universitario</div>
-    <div class="benefit">Atención por WhatsApp</div>
+  <div class="image-grid">
+    <article class="image-card">
+      <img src="assets/estudio-online.png" alt="Material de estudio de Física y Matemática" onerror="this.style.display='none'">
+      <div class="image-card-content">
+        <h3>Preparación organizada</h3>
+        <p>
+          Revisamos el tema, ordenamos ideas y trabajamos con teoría breve
+          antes de pasar a los ejercicios.
+        </p>
+      </div>
+    </article>
+
+    <article class="image-card">
+      <img src="assets/clase-virtual.png" alt="Clase virtual personalizada de Matemática" onerror="this.style.display='none'">
+      <div class="image-card-content">
+        <h3>Explicación en vivo</h3>
+        <p>
+          La sesión se realiza por videollamada, con explicación visual,
+          resolución guiada y espacio para resolver dudas.
+        </p>
+      </div>
+    </article>
   </div>
 </section>
 
 <section class="section" id="cursos">
   <h2 class="section-title">¿Para quiénes son las clases?</h2>
   <p class="section-subtitle">
-    Adaptamos la clase según el nivel del estudiante y el tema que necesita reforzar.
+    Atendemos distintos niveles académicos. La clase se ajusta al objetivo del estudiante:
+    reforzar, practicar, prepararse para una evaluación o entender un tema desde cero.
   </p>
 
-  <div class="grid">
-    <div class="card">
+  <div class="courses">
+    <article class="course-card">
       <h3>Escolares</h3>
       <p>
         Refuerzo en Física y Matemática para secundaria. Ideal para prácticas,
-        evaluaciones, tareas y recuperación de temas.
+        evaluaciones, tareas guiadas y recuperación de temas.
       </p>
-    </div>
+    </article>
 
-    <div class="card">
+    <article class="course-card">
       <h3>Preuniversitarios</h3>
       <p>
-        Preparación en problemas operativos, teoría necesaria y resolución paso a paso
-        para mejorar el rendimiento.
+        Entrenamiento en problemas operativos, teoría necesaria y métodos de resolución
+        para ganar seguridad antes de una evaluación.
       </p>
-    </div>
+    </article>
 
-    <div class="card">
+    <article class="course-card">
       <h3>Universitarios</h3>
       <p>
         Apoyo en Física, Matemática, Cálculo, Álgebra y cursos afines,
-        según el sílabo o material del estudiante.
+        trabajando con el sílabo o material del estudiante.
       </p>
-    </div>
+    </article>
   </div>
 </section>
 
 <section class="section">
-  <h2 class="section-title">¿Cómo trabajamos?</h2>
+  <h2 class="section-title">¿Cómo coordinamos la clase?</h2>
   <p class="section-subtitle">
-    Primero nos escribes por WhatsApp y nos indicas el curso, tema y nivel. Luego coordinamos
-    disponibilidad, modalidad y horario. La clase se realiza por videollamada y se trabaja con
-    explicación teórica breve más ejercicios guiados.
+    El proceso es simple. Primero nos escribes, luego revisamos el curso y finalmente
+    coordinamos el horario disponible.
   </p>
+
+  <div class="process">
+    <article class="process-card">
+      <h3>Nos escribes</h3>
+      <p>Indicas el curso, nivel y tema que necesitas reforzar.</p>
+    </article>
+
+    <article class="process-card">
+      <h3>Revisamos el tema</h3>
+      <p>Nos puedes enviar foto, guía, sílabo, práctica o ejercicios.</p>
+    </article>
+
+    <article class="process-card">
+      <h3>Coordinamos horario</h3>
+      <p>Definimos disponibilidad y docente para la sesión virtual.</p>
+    </article>
+
+    <article class="process-card">
+      <h3>Iniciamos la clase</h3>
+      <p>Trabajamos teoría breve, ejercicios y dudas paso a paso.</p>
+    </article>
+  </div>
 </section>
 
-<section class="section cta-box">
-  <h2>¿Necesitas reforzar un curso?</h2>
+<section class="section" id="video">
+  <h2 class="section-title">Mira una clase demostrativa</h2>
+  <p class="section-subtitle">
+    En este video puedes ver el estilo de explicación: ordenado, visual y centrado
+    en que el estudiante entienda el procedimiento.
+  </p>
+
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube.com/embed/REEMPLAZA_AQUI_EL_ID_DEL_VIDEO"
+      title="Clase demostrativa AURA"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="hero-actions" style="margin-top: 24px;">
+    <a
+      id="btn-whatsapp-video"
+      class="btn-primary"
+      href="https://wa.me/51927820626?text=Hola%20AURA,%20vi%20la%20clase%20demostrativa%20y%20quiero%20informes"
+      target="_blank">
+      Quiero una clase como esta
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Preguntas frecuentes</h2>
+
+  <div class="faq">
+    <details>
+      <summary>¿Las clases son virtuales?</summary>
+      <p>Sí. Las clases son 100% virtuales por videollamada.</p>
+    </details>
+
+    <details>
+      <summary>¿Cuánto dura cada clase?</summary>
+      <p>Las sesiones están pensadas para durar 2 horas, para poder explicar teoría y resolver ejercicios con calma.</p>
+    </details>
+
+    <details>
+      <summary>¿Puedo enviar mis ejercicios antes de la clase?</summary>
+      <p>Sí. Puedes enviar fotos, guías, prácticas o el sílabo del curso para orientar mejor la sesión.</p>
+    </details>
+
+    <details>
+      <summary>¿Atienden colegio y universidad?</summary>
+      <p>Sí. AURA atiende escolares, preuniversitarios y universitarios en cursos de Física, Matemática y áreas afines.</p>
+    </details>
+  </div>
+</section>
+
+<section class="section cta-final">
+  <h2>¿Necesitas reforzar Física o Matemática?</h2>
   <p>
-    Escríbenos por WhatsApp y cuéntanos qué tema necesitas trabajar.
-    Te orientamos para programar una clase virtual.
+    Escríbenos por WhatsApp, cuéntanos tu curso y el tema que necesitas trabajar.
+    Te orientamos para coordinar una clase virtual.
   </p>
 
   <a
-    id="btn-whatsapp-secundario"
+    id="btn-whatsapp-final"
     class="btn-primary"
-    href="https://wa.me/51927820626?text=Hola%20AURA,%20vengo%20de%20la%20landing%20y%20quiero%20consultar%20disponibilidad"
+    href="https://wa.me/51927820626?text=Hola%20AURA,%20quiero%20coordinar%20una%20clase%20virtual%20de%20Fisica%20o%20Matematica"
     target="_blank">
-    Consultar disponibilidad
+    Coordinar por WhatsApp
   </a>
 </section>
 
-<div class="footer">
-  AURA - Aula Universitaria de Refuerzo Académico | Clases virtuales de Física y Matemática
-</div>
+<footer class="footer">
+  AURA - Aula Universitaria de Refuerzo Académico | Entendemos. Aprendemos. Avanzamos.
+</footer>
 ```
 
   </main>
@@ -544,8 +902,10 @@
  class="floating-whatsapp"
  href="https://wa.me/51927820626?text=Hola%20AURA,%20quiero%20informes%20sobre%20clases%20virtuales"
  target="_blank"
- aria-label="WhatsApp AURA"> <span>☎</span> </a>
+ aria-label="Escribir a AURA por WhatsApp">
+💬 </a>
 
 </body>
 </html>
+
 
